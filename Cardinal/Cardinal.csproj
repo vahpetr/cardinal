@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E18FFE4-1A25-411E-AF65-8EE10EDD3E56}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cardinal</RootNamespace>
+    <AssemblyName>Cardinal</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivationFunctions\BipolarSigmoidActivationFunction.cs" />
+    <Compile Include="ActivationFunctions\Contract\IActivationFunction.cs" />
+    <Compile Include="ActivationFunctions\RectifiedLinearActivationFunction.cs" />
+    <Compile Include="ActivationFunctions\SoftmaxNaiveActivationFunction.cs" />
+    <Compile Include="ActivationFunctions\SoftmaxActivationFunction.cs" />
+    <Compile Include="ActivationFunctions\TanhActivationFunction.cs" />
+    <Compile Include="ActivationFunctions\SigmoidActivationFunction.cs" />
+    <Compile Include="ActivationFunctions\HardTanhActivationFunction.cs" />
+    <Compile Include="ActivationFunctions\ThresholdActivationFunction.cs" />
+    <Compile Include="ErrorFunctions\DirectMeasurementsErrorFunction.cs" />
+    <Compile Include="Layers\Contract\ILayer.cs" />
+    <Compile Include="Layers\Layer.cs" />
+    <Compile Include="Learning\SupervisedLearning.cs" />
+    <Compile Include="Learning\Contract\ISupervisedLearning.cs" />
+    <Compile Include="ErrorFunctions\Contratc\IErrorFunction.cs" />
+    <Compile Include="ErrorFunctions\CrossEntropyErrorFunction.cs" />
+    <Compile Include="ErrorFunctions\SquaredErrorFunction.cs" />
+    <Compile Include="ErrorFunctions\LogLikelihoodErrorFunction.cs" />
+    <Compile Include="Lessions\Contract\ILession.cs" />
+    <Compile Include="Lessions\Contract\IDataset.cs" />
+    <Compile Include="Lessions\Lession.cs" />
+    <Compile Include="Lessions\Contract\IDatasets.cs" />
+    <Compile Include="Lessions\Datasets.cs" />
+    <Compile Include="Lessions\Dataset.cs" />
+    <Compile Include="Networks\Contract\INetwork.cs" />
+    <Compile Include="Networks\Network.cs" />
+    <Compile Include="Neurons\Neuron.cs" />
+    <Compile Include="Neurons\Contract\INeuron.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Builders\Contract\IBuilder.cs" />
+    <Compile Include="Builders\NetworkBuilder.cs" />
+    <Compile Include="Trainings\Contract\ITraining.cs" />
+    <Compile Include="Trainings\CopmutedError.cs" />
+    <Compile Include="Trainings\Training.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
